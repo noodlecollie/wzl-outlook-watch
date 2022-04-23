@@ -2,7 +2,9 @@
 #define _ADAFRUIT_GFX_H
 
 #if ARDUINO >= 100
+#include <SilenceESP32Warnings.h>
 #include "Arduino.h"
+#include <UnsilenceESP32Warnings.h>
 #include "Print.h"
 #else
 #include "WProgram.h"

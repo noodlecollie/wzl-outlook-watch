@@ -2195,6 +2195,9 @@ uint16_t bma4_second_if_mag_compensate_xyz(struct bma4_mag_fifo_data mag_fifo_da
     uint16_t mag_r = 0;
 #endif
 
+    (void)mag_fifo_data;
+    (void)compensated_mag_data;
+
     switch (mag_second_if) {
 #ifdef BMM150
     case BMA4_SEC_IF_BMM150:
@@ -2258,6 +2261,8 @@ uint16_t bma4_read_mag_xyz(struct bma4_mag *mag, uint8_t sensor_select, struct b
     uint16_t lsb = 0;
     uint8_t data[BMA4_MAG_XYZ_DATA_LENGTH] = {0};
 #endif
+
+    (void)mag;
 
     /* Check the bma4 structure as NULL */
     if (dev == NULL) {

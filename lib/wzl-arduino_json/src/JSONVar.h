@@ -20,7 +20,9 @@
 #ifndef _JSON_VAR_H_
 #define _JSON_VAR_H_
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 
 struct cJSON;
 

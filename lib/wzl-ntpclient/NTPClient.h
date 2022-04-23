@@ -1,6 +1,8 @@
 #pragma once
 
+#include <SilenceESP32Warnings.h>
 #include "Arduino.h"
+#include <UnsilenceESP32Warnings.h>
 
 #include <Udp.h>
 

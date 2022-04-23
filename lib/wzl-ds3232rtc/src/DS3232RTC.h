@@ -9,7 +9,9 @@
 #ifndef DS3232RTC_H_INCLUDED
 #define DS3232RTC_H_INCLUDED
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 #include <TimeLib.h>        // https://github.com/PaulStoffregen/Time
 
 // define release-independent I2C functions

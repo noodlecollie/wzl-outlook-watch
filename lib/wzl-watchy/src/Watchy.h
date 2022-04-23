@@ -1,9 +1,12 @@
 #ifndef WATCHY_H
 #define WATCHY_H
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
-#include <WiFiManager.h>
 #include <HTTPClient.h>
+#include <UnsilenceESP32Warnings.h>
+
+#include <WiFiManager.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 #include <Arduino_JSON.h>

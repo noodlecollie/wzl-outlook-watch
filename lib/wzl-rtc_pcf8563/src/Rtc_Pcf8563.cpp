@@ -50,7 +50,9 @@
 
 
 #if defined(ARDUINO) && ARDUINO >= 100
+#include <SilenceESP32Warnings.h>
 #include "Arduino.h"
+#include <UnsilenceESP32Warnings.h>
 #define byte uint8_t
 #define send( X ) write( static_cast<uint8_t>(X) )
 #define receive( X ) read( X )
@@ -60,6 +62,12 @@
 
 #include <Wire.h>
 #include "Rtc_Pcf8563.h"
+
+// Helper to avoid warnings
+static inline byte constrainByte(byte amt, byte low, byte high)
+{
+    return static_cast<byte>(constrain(static_cast<unsigned int>(amt), static_cast<unsigned int>(low), static_cast<unsigned int>(high)));
+}
 
 Rtc_Pcf8563::Rtc_Pcf8563(void)
 {
@@ -208,7 +216,7 @@ boolean Rtc_Pcf8563::alarmActive()
 void Rtc_Pcf8563::setAlarm(byte min, byte hour, byte day, byte weekday)
 {
     if (min <99) {
-        min = constrain(min, 0, 59);
+        min = constrainByte(min, 0, 59);
         min = decToBcd(min);
         min &= ~RTCC_ALARM;
     } else {
@@ -216,7 +224,7 @@ void Rtc_Pcf8563::setAlarm(byte min, byte hour, byte day, byte weekday)
     }
 
     if (hour <99) {
-        hour = constrain(hour, 0, 23);
+        hour = constrainByte(hour, 0, 23);
         hour = decToBcd(hour);
         hour &= ~RTCC_ALARM;
     } else {
@@ -224,14 +232,14 @@ void Rtc_Pcf8563::setAlarm(byte min, byte hour, byte day, byte weekday)
     }
 
     if (day <99) {
-        day = constrain(day, 1, 31);
+        day = constrainByte(day, 1, 31);
         day = decToBcd(day); day &= ~RTCC_ALARM;
     } else {
         day = 0x0; day |= RTCC_ALARM;
     }
 
     if (weekday <99) {
-        weekday = constrain(weekday, 0, 6);
+        weekday = constrainByte(weekday, 0, 6);
         weekday = decToBcd(weekday);
         weekday &= ~RTCC_ALARM;
     } else {

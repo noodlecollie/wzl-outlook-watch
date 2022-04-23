@@ -1,7 +1,9 @@
 #ifndef Adafruit_I2CDevice_h
 #define Adafruit_I2CDevice_h
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 #include <Wire.h>
 
 ///< The class which defines how we will talk to this device over I2C

@@ -30,5 +30,25 @@
 		{ "name": "wzl-adafruit-gfx" },
 		{ "name": "wzl-ds3232rtc" },
 		{ "name": "wzl-rtc_pcf8563" }
-	]
+	],
+
+	"build":
+	{
+		"flags":
+		[
+			"-Wall",
+			"-Wextra",
+			"-Werror"
+		],
+
+		"unflags":
+		[
+			"-Wno-error=deprecated-declarations",
+			"-Wno-unused-but-set-variable",
+			"-Wno-unused-function",
+			"-Wno-unused-variable",
+			"-Wno-unused-parameter",
+			"-Wno-implicit-fallthrough"
+		]
+	}
 }

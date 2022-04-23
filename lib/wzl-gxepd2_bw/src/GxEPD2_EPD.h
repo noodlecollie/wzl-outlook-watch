@@ -12,7 +12,9 @@
 #ifndef _GxEPD2_EPD_H_
 #define _GxEPD2_EPD_H_
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 #include <SPI.h>
 
 #include <GxEPD2.h>
@@ -116,7 +118,7 @@ class GxEPD2_EPD
     bool _initial_write, _initial_refresh;
     bool _power_is_on, _using_partial_mode, _hibernating;
     uint16_t _reset_duration;
-    void (*_busy_callback)(const void*); 
+    void (*_busy_callback)(const void*);
     const void* _busy_callback_parameter;
 };
 

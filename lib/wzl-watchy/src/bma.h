@@ -1,7 +1,9 @@
 #pragma once
 
-#ifdef  ARDUINO
+#ifdef ARDUINO
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 #else
 #include <stdlib.h>
 #endif

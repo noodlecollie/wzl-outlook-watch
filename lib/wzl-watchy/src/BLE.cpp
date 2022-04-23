@@ -24,11 +24,11 @@ bool updateFlag = false;
 
 
 class BLECustomServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) {
+    void onConnect(BLEServer*) {
       status = STATUS_CONNECTED;
     };
 
-    void onDisconnect(BLEServer* pServer) {
+    void onDisconnect(BLEServer*) {
       status = STATUS_DISCONNECTED;
     }
 };
@@ -63,7 +63,7 @@ void otaCallback::onWrite(BLECharacteristic *pCharacteristic)
         esp_ota_end(otaHandler);
         //Serial.println("End FW Update");
         if (ESP_OK == esp_ota_set_boot_partition(esp_ota_get_next_update_partition(NULL))) {
-          status = STATUS_READY;        
+          status = STATUS_READY;
         }
         else {
           //Serial.println("Upload Error");

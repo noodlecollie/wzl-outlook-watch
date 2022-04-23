@@ -20,7 +20,9 @@
 #ifndef _JSON_H_
 #define _JSON_H_
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 
 #include "JSONVar.h"
 

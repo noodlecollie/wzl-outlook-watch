@@ -1,9 +1,11 @@
 #ifndef _BLE_H_
 #define _BLE_H_
 
+#include <SilenceESP32Warnings.h>
 #include "Arduino.h"
-
 #include <BLEDevice.h>
+#include <UnsilenceESP32Warnings.h>
+
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
@@ -24,7 +26,7 @@ class BLE
     bool begin(const char* localName);
     int updateStatus();
     int howManyBytes();
-  
+
   private:
     String local_name;
 

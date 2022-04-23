@@ -21,7 +21,33 @@
 	],
 
 	"frameworks": "Arduino",
-	"examples": [
+	"examples":
+	[
 		"examples/*/*.ino"
+	],
+
+	"build":
+	{
+		"flags":
+		[
+			"-Wall",
+			"-Wextra",
+			"-Werror"
+		],
+
+		"unflags":
+		[
+			"-Wno-error=deprecated-declarations",
+			"-Wno-unused-but-set-variable",
+			"-Wno-unused-function",
+			"-Wno-unused-variable",
+			"-Wno-unused-parameter",
+			"-Wno-implicit-fallthrough"
+		]
+	},
+
+	"dependencies":
+	[
+		{ "name": "wzl-mitigate-esp32-warnings" }
 	]
 }

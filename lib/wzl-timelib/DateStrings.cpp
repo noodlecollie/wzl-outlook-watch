@@ -4,12 +4,14 @@
  * Updated for Arduino 1.5.7 18 July 2014
  *
  * No memory is consumed in the sketch if your code does not call any of the string methods
- * You can change the text of the strings, make sure the short strings are each exactly 3 characters 
+ * You can change the text of the strings, make sure the short strings are each exactly 3 characters
  * the long strings can be any length up to the constant dt_MAX_STRING_LEN defined in TimeLib.h
- * 
+ *
  */
 
+#include <SilenceESP32Warnings.h>
 #include <Arduino.h>
+#include <UnsilenceESP32Warnings.h>
 
 // Arduino.h should properly define PROGMEM, PGM_P, strcpy_P, pgm_read_byte, pgm_read_ptr
 // But not all platforms define these as they should.  If you find a platform needing these
@@ -21,7 +23,7 @@
 
 #include "TimeLib.h"
 
- 
+
 // the short strings for each day or month must be exactly dt_SHORT_STR_LEN
 #define dt_SHORT_STR_LEN  3 // the length of short strings
 
@@ -75,23 +77,23 @@ char* monthStr(uint8_t month)
 
 char* monthShortStr(uint8_t month)
 {
-   for (int i=0; i < dt_SHORT_STR_LEN; i++)      
-      buffer[i] = pgm_read_byte(&(monthShortNames_P[i+ (month*dt_SHORT_STR_LEN)]));  
+   for (int i=0; i < dt_SHORT_STR_LEN; i++)
+      buffer[i] = pgm_read_byte(&(monthShortNames_P[i+ (month*dt_SHORT_STR_LEN)]));
    buffer[dt_SHORT_STR_LEN] = 0;
    return buffer;
 }
 
-char* dayStr(uint8_t day) 
+char* dayStr(uint8_t day)
 {
    strcpy_P(buffer, (PGM_P)pgm_read_ptr(&(dayNames_P[day])));
    return buffer;
 }
 
-char* dayShortStr(uint8_t day) 
+char* dayShortStr(uint8_t day)
 {
    uint8_t index = day*dt_SHORT_STR_LEN;
-   for (int i=0; i < dt_SHORT_STR_LEN; i++)      
-      buffer[i] = pgm_read_byte(&(dayShortNames_P[index + i]));  
-   buffer[dt_SHORT_STR_LEN] = 0; 
+   for (int i=0; i < dt_SHORT_STR_LEN; i++)
+      buffer[i] = pgm_read_byte(&(dayShortNames_P[index + i]));
+   buffer[dt_SHORT_STR_LEN] = 0;
    return buffer;
 }

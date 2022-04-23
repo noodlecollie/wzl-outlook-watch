@@ -21,7 +21,6 @@
 
 	"dependencies":
 	[
-		{ "name": "wzl-adafruit_busio" },
 		{ "name": "wzl-mitigate-esp32-warnings" }
 	]
 }
