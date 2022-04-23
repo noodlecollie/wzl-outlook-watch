@@ -1,0 +1,31 @@
+{
+	"name": "wzl-wifimanager",
+	"version": "2.0.3-alpha",
+	"keywords": "wifi,wi-fi,esp,esp8266,esp32,espressif8266,espressif32,nodemcu,wemos,arduino",
+	"description": "Fork of: WiFi Configuration manager with web configuration portal for ESP boards",
+
+	"authors":
+	[
+		{
+				"name": "tzapu",
+				"url": "https://github.com/tzapu"
+		},
+
+		{
+				"name": "tablatronix",
+				"url": "https://github.com/tablatronix"
+		},
+
+		{
+			"name": "NoodleCollie",
+			"url": "https://github.com/noodlecollie"
+		}
+	],
+
+	"frameworks": "arduino",
+	"platforms":
+	[
+		"espressif8266",
+		"espressif32"
+	]
+}

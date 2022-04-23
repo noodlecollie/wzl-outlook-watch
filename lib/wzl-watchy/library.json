@@ -24,6 +24,7 @@
 
 	"dependencies":
 	[
+		{ "name": "wzl-wifimanager" },
 		{ "name": "Adafruit GFX Library" },
 		{ "name": "Arduino_JSON" },
 		{ "name": "DS3232RTC" },
@@ -35,10 +36,6 @@
 		{
 			"name": "GxEPD2",
 			"version": "https://github.com/ZinggJM/GxEPD2.git#master"
-		},
-		{
-			"name": "WiFiManager",
-			"version": "https://github.com/tzapu/WiFiManager.git#2.0.3-alpha"
 		}
 	]
 }
