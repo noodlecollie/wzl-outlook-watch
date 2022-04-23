@@ -1,12 +1,10 @@
 #pragma once
 
-#include <Watchy.h>
+#include <MinimalWatchy.h>
 
-class WatchyOutlook : public Watchy
+class WatchyOutlook : public CustomWatchy::MinimalWatchy
 {
 public:
-	WatchyOutlook();
-
 	void drawWatchFace() override;
 
 private:

@@ -1,0 +1,27 @@
+{
+	"build":
+	{
+		"flags":
+		[
+			"-Wall",
+			"-Wextra",
+			"-Werror"
+		],
+
+		"unflags":
+		[
+			"-Wno-error=deprecated-declarations",
+			"-Wno-unused-but-set-variable",
+			"-Wno-unused-function",
+			"-Wno-unused-variable",
+			"-Wno-unused-parameter",
+			"-Wno-implicit-fallthrough"
+		]
+	},
+
+	"dependencies":
+	[
+		{ "name": "wzl-customwatchy" },
+		{ "name": "wzl-watchyresources" }
+	]
+}

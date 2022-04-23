@@ -1,42 +1,25 @@
 #include "WatchyOutlook.h"
 #include "images/maple_threshold.h"
-
-static const watchySettings SETTINGS
-{
-	"",
-	"",
-	"",
-	"metric",
-	"en",
-	30,
-	"uk.pool.ntp.org",
-	0,
-	3600
-};
-
-WatchyOutlook::WatchyOutlook() :
-	Watchy(settings)
-{
-}
+#include "DSEG7_Classic_Bold_53.h"
 
 void WatchyOutlook::drawWatchFace()
 {
-	display.fillScreen(GxEPD_WHITE);
-	display.setTextColor(GxEPD_BLACK);
+	m_Display.fillScreen(GxEPD_WHITE);
+	m_Display.setTextColor(GxEPD_BLACK);
 
-	display.drawBitmap(0, 0, Image_maple_threshold::DATA, Image_maple_threshold::WIDTH, Image_maple_threshold::HEIGHT, GxEPD_BLACK);
+	m_Display.drawBitmap(0, 0, Image_maple_threshold::DATA, Image_maple_threshold::WIDTH, Image_maple_threshold::HEIGHT, GxEPD_BLACK);
 
 	drawTime();
 }
 
 void WatchyOutlook::drawTime()
 {
-	display.setFont(&DSEG7_Classic_Bold_53);
-	display.setCursor(5, 200);
+	m_Display.setFont(&DSEG7_Classic_Bold_53);
+	m_Display.setCursor(5, 200);
 
-	display.fillRect(0, Image_maple_threshold::HEIGHT, 200, (200 - Image_maple_threshold::HEIGHT), GxEPD_WHITE);
+	m_Display.fillRect(0, Image_maple_threshold::HEIGHT, 200, (200 - Image_maple_threshold::HEIGHT), GxEPD_WHITE);
 
-	int displayHour = currentTime.Hour;
+	int displayHour = m_CurrentTime.Hour;
 
 	if ( HOUR_12_24 == 12 )
 	{
@@ -45,16 +28,16 @@ void WatchyOutlook::drawTime()
 
 	if ( displayHour < 10 )
 	{
-		display.print("0");
+		m_Display.print("0");
 	}
 
-	display.print(displayHour);
-	display.print(":");
+	m_Display.print(displayHour);
+	m_Display.print(":");
 
-	if ( currentTime.Minute < 10 )
+	if ( m_CurrentTime.Minute < 10 )
 	{
-		display.print("0");
+		m_Display.print("0");
 	}
 
-	display.println(currentTime.Minute);
+	m_Display.println(m_CurrentTime.Minute);
 }

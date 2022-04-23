@@ -1,20 +1,4 @@
 {
-	"name": "wzl-watchy",
-	"version": "0.0.1",
-	"description": "Forked from: Watchy - An Open Source E-Paper Watch by SQFMI",
-
-	"authors":
-	[
-		{
-			"name": "SQFMI",
-			"url": "https://github.com/sqfmi"
-		},
-		{
-			"name": "NoodleCollie",
-			"url": "https://github.com/noodlecollie"
-		}
-	],
-
 	"frameworks": "arduino",
 	"platforms":
 	[
@@ -23,9 +7,6 @@
 
 	"dependencies":
 	[
-		{ "name": "wzl-wifimanager" },
-		{ "name": "wzl-ntpclient" },
-		{ "name": "wzl-arduino_json" },
 		{ "name": "wzl-gxepd2_bw" },
 		{ "name": "wzl-adafruit-gfx" },
 		{ "name": "wzl-ds3232rtc" },
