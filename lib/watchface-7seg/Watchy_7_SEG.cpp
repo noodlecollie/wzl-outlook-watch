@@ -8,6 +8,24 @@ const uint8_t BATTERY_SEGMENT_SPACING = 9;
 const uint8_t WEATHER_ICON_WIDTH = 48;
 const uint8_t WEATHER_ICON_HEIGHT = 32;
 
+static const watchySettings SETTINGS
+{
+	"5128581", // New York City https://openweathermap.org/current#cityid
+	"f058fe1cad2afe8e2ddc5d063a64cecb", // use your own API key
+	"http://api.openweathermap.org/data/2.5/weather?id=",
+	"metric",
+	"en",
+	30,
+	"pool.ntp.org",
+	0,
+	3600
+};
+
+Watchy7SEG::Watchy7SEG() :
+    Watchy(SETTINGS)
+{
+}
+
 void Watchy7SEG::drawWatchFace(){
     display.fillScreen(DARKMODE ? GxEPD_BLACK : GxEPD_WHITE);
     display.setTextColor(DARKMODE ? GxEPD_WHITE : GxEPD_BLACK);
