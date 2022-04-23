@@ -2,10 +2,12 @@
 #define CONFIG_H
 
 //pins
+// NoodleCollie: I had to update these, no idea why they weren't correct in the first place...
+// https://twitter.com/sqfmi/status/1517285323339882496
 #define SDA 21
 #define SCL 22
 #define V10_ADC_PIN 33 //OG v1.0 Watchy
-#define V15_ADC_PIN 35 //v1.5 Watchy with PCF8563 RTC
+#define V15_ADC_PIN 34 // NoodleCollie: used to be "35: v1.5 Watchy with PCF8563 RTC"
 #define RTC_PIN GPIO_NUM_27
 #define CS 5
 #define DC 10
@@ -14,7 +16,7 @@
 #define VIB_MOTOR_PIN 13
 #define MENU_BTN_PIN 26
 #define BACK_BTN_PIN 25
-#define UP_BTN_PIN 32
+#define UP_BTN_PIN 35 // NoodleCollie: Used to be 32
 #define DOWN_BTN_PIN 4
 #define MENU_BTN_MASK GPIO_SEL_26
 #define BACK_BTN_MASK GPIO_SEL_25

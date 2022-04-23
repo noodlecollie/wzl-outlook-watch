@@ -1,4 +1,4 @@
-#include <Watchy.h>
+#include "Watchy_7_SEG.h"
 
 static watchySettings settings
 {
@@ -13,7 +13,7 @@ static watchySettings settings
 	3600
 };
 
-Watchy watchy(settings);
+Watchy7SEG watchy(settings);
 
 void setup()
 {
