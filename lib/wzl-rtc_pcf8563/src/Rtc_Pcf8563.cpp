@@ -4,7 +4,7 @@
  *  AUTHOR
  *    Joe Robertson, jmr
  *    orbitalair@gmail.com
- *    
+ *
  *  CREATION DATE
  *    9/24/06,  init - built off of usart demo.  using mikroC
  *  NOTES
@@ -47,8 +47,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  * or https://www.gnu.org/licenses/lgpl-3.0.html
  */
- 
- 
+
+
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
 #define byte uint8_t
@@ -64,14 +64,14 @@
 Rtc_Pcf8563::Rtc_Pcf8563(void)
 {
     Wire.begin();
-    Rtcc_Addr = RTCC_R>>1;  
+    Rtcc_Addr = RTCC_R>>1;
 }
 
 void Rtc_Pcf8563::initClock()
-{     
+{
   Wire.beginTransmission(Rtcc_Addr);    // Issue I2C start signal
   Wire.send(0x0);       // start address
-    
+
   Wire.send(0x0);   //control/status1
   Wire.send(0x0);   //control/status2
   Wire.send(0x01);  //set seconds
@@ -88,7 +88,7 @@ void Rtc_Pcf8563::initClock()
   Wire.send(0x0);   //set SQW, see: setSquareWave
   Wire.send(0x0);   //timer off
   Wire.endTransmission();
-  
+
 }
 
 /* Private internal functions, but useful to look at if you need a similar func. */
@@ -109,7 +109,7 @@ void Rtc_Pcf8563::clearStatus()
     Wire.send(0x0);
   Wire.send(0x0);               //control/status1
   Wire.send(0x0);               //control/status2
-  Wire.endTransmission();  
+  Wire.endTransmission();
 }
 
 void Rtc_Pcf8563::setTime(byte hour, byte minute, byte sec)
@@ -121,7 +121,7 @@ void Rtc_Pcf8563::setTime(byte hour, byte minute, byte sec)
   Wire.send(decToBcd(minute));  //set minutes
   Wire.send(decToBcd(hour));        //set hour
     Wire.endTransmission();
-   
+
 }
 
 void Rtc_Pcf8563::setDate(byte day, byte weekday, byte mon, byte century, byte year)
@@ -319,25 +319,25 @@ void Rtc_Pcf8563::resetAlarm()
 
 void Rtc_Pcf8563::clearAlarm()
 {
-    //set status2 AF val to zero to reset alarm 
+    //set status2 AF val to zero to reset alarm
     status2 &= ~RTCC_ALARM_AF;
     //turn off the interrupt
     status2 &= ~RTCC_ALARM_AIE;
-        
+
   Wire.beginTransmission(Rtcc_Addr);
     Wire.send(RTCC_STAT2_ADDR);
-  Wire.send(status2); 
-  Wire.endTransmission();  
+  Wire.send(status2);
+  Wire.endTransmission();
 }
 
 /* call this first to load current date values to variables */
 void Rtc_Pcf8563::getDate()
-{  
+{
     /* set the start byte of the date data */
     Wire.beginTransmission(Rtcc_Addr);
     Wire.send(RTCC_DAY_ADDR);
     Wire.endTransmission();
-    
+
     Wire.requestFrom(Rtcc_Addr, 4); //request 4 bytes
     //0x3f = 0b00111111
     day = bcdToDec(Wire.receive() & 0x3f);
@@ -354,18 +354,18 @@ void Rtc_Pcf8563::getDate()
     //0x1f = 0b00011111
     month = month & 0x1f;
     month = bcdToDec(month);
-    year = bcdToDec(Wire.receive());  
+    year = bcdToDec(Wire.receive());
 }
 
 
 /* call this first to load current time values to variables */
 void Rtc_Pcf8563::getTime()
-{  
+{
     /* set the start byte , get the 2 status bytes */
     Wire.beginTransmission(Rtcc_Addr);
     Wire.send(RTCC_STAT1_ADDR);
     Wire.endTransmission();
-    
+
     Wire.requestFrom(Rtcc_Addr, 5); //request 5 bytes
     status1 = Wire.receive();
     status2 = Wire.receive();
@@ -376,8 +376,8 @@ void Rtc_Pcf8563::getTime()
     hour = bcdToDec(Wire.receive() & 0x3f);
 }
 
-char *Rtc_Pcf8563::version(){
-  return RTCC_VERSION;  
+const char *Rtc_Pcf8563::version(){
+  return RTCC_VERSION;
 }
 
 char *Rtc_Pcf8563::formatTime(byte style)
@@ -407,14 +407,14 @@ char *Rtc_Pcf8563::formatTime(byte style)
         }
     return strOut;
 }
- 
+
 
 char *Rtc_Pcf8563::formatDate(byte style)
 {
     getDate();
-    
+
         switch (style) {
-        
+
         case RTCC_DATE_ASIA:
             //do the asian style, yyyy-mm-dd
             if ( century == 1 ){
@@ -427,7 +427,7 @@ char *Rtc_Pcf8563::formatDate(byte style)
             }
             strDate[2] = '0' + (year / 10 );
             strDate[3] = '0' + (year % 10);
-            strDate[4] = '-';   
+            strDate[4] = '-';
             strDate[5] = '0' + (month / 10);
             strDate[6] = '0' + (month % 10);
             strDate[7] = '-';
@@ -435,7 +435,7 @@ char *Rtc_Pcf8563::formatDate(byte style)
             strDate[9] = '0' + (day % 10);
             strDate[10] = '\0';
             break;
-        case RTCC_DATE_US: 
+        case RTCC_DATE_US:
       //the pitiful US style, mm/dd/yyyy
             strDate[0] = '0' + (month / 10);
             strDate[1] = '0' + (month % 10);
@@ -464,7 +464,7 @@ char *Rtc_Pcf8563::formatDate(byte style)
             strDate[3] = '0' + (month / 10);
             strDate[4] = '0' + (month % 10);
             strDate[5] = '-';
-            
+
             if ( century == 1 ){
                 strDate[6] = '1';
                 strDate[7] = '9';
@@ -476,15 +476,15 @@ char *Rtc_Pcf8563::formatDate(byte style)
             strDate[8] = '0' + (year / 10 );
             strDate[9] = '0' + (year % 10);
             strDate[10] = '\0';
-            break;  
-        
+            break;
+
     }
     return strDate;
 }
 
-byte Rtc_Pcf8563::getSecond() {   
+byte Rtc_Pcf8563::getSecond() {
   getTime();
-    return sec; 
+    return sec;
 }
 
 byte Rtc_Pcf8563::getMinute() {

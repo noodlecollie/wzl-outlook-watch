@@ -4,7 +4,7 @@
  *  AUTHOR
  *    Joe Robertson, jmr
  *    orbitalair@gmail.com
- *    
+ *
  *  CREATION DATE
  *    1/2/10,  init - built off of pic rtc code
  *  NOTES
@@ -16,7 +16,7 @@
  *            added a few (not really useful) methods
  *    12/26/12 added version method to be able to track builds. jmr
  *             fix for arduino 1.0.1. Wire.
- *    
+ *
  *  TODO
  *
  ******
@@ -40,8 +40,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  * or https://www.gnu.org/licenses/lgpl-3.0.html
  */
- 
-   
+
+
 #ifndef Rtc_Pcf8563_H
 #define Rtc_Pcf8563_H
 
@@ -148,8 +148,8 @@ class Rtc_Pcf8563 {
         /* date supports 3 styles as listed in the wikipedia page about world date/time. */
         char *formatDate(byte style=RTCC_DATE_US);
 
-        char *version();
-        
+        const char *version();
+
     private:
         /* methods */
         byte decToBcd(byte value);
