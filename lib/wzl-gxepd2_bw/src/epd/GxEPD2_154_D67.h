@@ -20,16 +20,16 @@ class GxEPD2_154_D67 : public GxEPD2_EPD
 {
   public:
     // attributes
-    static const uint16_t WIDTH = 200;
-    static const uint16_t HEIGHT = 200;
-    static const GxEPD2::Panel panel = GxEPD2::GDEH0154D67;
-    static const bool hasColor = false;
-    static const bool hasPartialUpdate = true;
-    static const bool hasFastPartialUpdate = true;
-    static const uint16_t power_on_time = 100; // ms, e.g. 95583us
-    static const uint16_t power_off_time = 150; // ms, e.g. 140621us
-    static const uint16_t full_refresh_time = 2600; // ms, e.g. 2509602us
-    static const uint16_t partial_refresh_time = 500; // ms, e.g. 457282us
+    static constexpr uint16_t WIDTH = 200;
+    static constexpr uint16_t HEIGHT = 200;
+    static constexpr GxEPD2::Panel panel = GxEPD2::GDEH0154D67;
+    static constexpr bool hasColor = false;
+    static constexpr bool hasPartialUpdate = true;
+    static constexpr bool hasFastPartialUpdate = true;
+    static constexpr uint16_t power_on_time = 100; // ms, e.g. 95583us
+    static constexpr uint16_t power_off_time = 150; // ms, e.g. 140621us
+    static constexpr uint16_t full_refresh_time = 2600; // ms, e.g. 2509602us
+    static constexpr uint16_t partial_refresh_time = 500; // ms, e.g. 457282us
     // constructor
     GxEPD2_154_D67(int16_t cs, int16_t dc, int16_t rst, int16_t busy);
     // methods (virtual)

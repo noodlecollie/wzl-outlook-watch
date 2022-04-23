@@ -27,7 +27,7 @@ def loadImage(imagePath):
 	return Image.open(imagePath).convert(mode="1")
 
 def alignToMultipleOfEight(num):
-	return 8 * math.floor(num/8)
+	return int((num + 7) / 8) * 8
 
 def convertImageData(img):
 	(width, height) = img.size
@@ -36,7 +36,7 @@ def convertImageData(img):
 	print("Image size:", f"{width}x{height}")
 	print("Byte-aligned width:", alignedWidth)
 
-	imgData = [0] * (width * alignedWidth)
+	imgData = [0] * (alignedWidth * height)
 
 	for y in range(0, height):
 		for x in range(0, width):

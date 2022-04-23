@@ -13,6 +13,9 @@ namespace CustomWatchy
 	class MinimalWatchy
 	{
 	public:
+		static constexpr uint16_t DISPLAY_WIDTH = GxEPD2_154_D67::WIDTH;
+		static constexpr uint16_t DISPLAY_HEIGHT = GxEPD2_154_D67::HEIGHT;
+
 		void init(String datetime = "");
 		void deepSleep();
 
