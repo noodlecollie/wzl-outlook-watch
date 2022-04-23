@@ -29,7 +29,8 @@
 		{ "name": "wzl-gxepd2_bw" },
 		{ "name": "wzl-adafruit-gfx" },
 		{ "name": "wzl-ds3232rtc" },
-		{ "name": "wzl-rtc_pcf8563" }
+		{ "name": "wzl-rtc_pcf8563" },
+		{ "name": "wzl-bma" }
 	],
 
 	"build":
