@@ -32,7 +32,9 @@ void WatchyOutlook::drawWatchFace()
 void WatchyOutlook::drawTime()
 {
 	display.setFont(&DSEG7_Classic_Bold_53);
-	display.setCursor(5, 58);
+	display.setCursor(5, 200);
+
+	display.fillRect(0, Image_maple_threshold::HEIGHT, 200, (200 - Image_maple_threshold::HEIGHT), GxEPD_WHITE);
 
 	int displayHour = currentTime.Hour;
 
