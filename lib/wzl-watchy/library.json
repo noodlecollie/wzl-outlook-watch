@@ -29,9 +29,6 @@
 		{ "name": "wzl-gxepd2_bw" },
 		{ "name": "wzl-adafruit-gfx" },
 		{ "name": "wzl-ds3232rtc" },
-		{
-			"name": "Rtc_Pcf8563",
-			"version": "https://github.com/orbitalair/Rtc_Pcf8563.git#master"
-		}
+		{ "name": "wzl-rtc_pcf8563" }
 	]
 }
