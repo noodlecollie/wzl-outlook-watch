@@ -31,17 +31,16 @@ def alignToMultipleOfEight(num):
 
 def convertImageData(img):
 	(width, height) = img.size
-	alignedHeight = alignToMultipleOfEight(height)
+	alignedWidth = alignToMultipleOfEight(width)
 
 	print("Image size:", f"{width}x{height}")
-	print("Byte-aligned height:", alignedHeight)
+	print("Byte-aligned width:", alignedWidth)
 
-	imgData = [0] * (width * alignedHeight)
+	imgData = [0] * (width * alignedWidth)
 
-	# Ensure that data is in column-major order.
-	for x in range(0, width):
-		for y in range(0, height):
-			imgData[(x * alignedHeight) + y] = int(img.getpixel((x, y)) / 255)
+	for y in range(0, height):
+		for x in range(0, width):
+			imgData[(y * alignedWidth) + x] = int(img.getpixel((x, y)) / 255)
 
 	return (width, height, imgData)
 
@@ -56,7 +55,8 @@ def packImageData(data):
 
 		for i in range(0, len(bits)):
 			if bits[i]:
-				outValue = outValue | (1 << i)
+				# Bits are filled from the highest index down.
+				outValue = outValue | (1 << (7 - i))
 
 		outData[byteIndex] = outValue
 
