@@ -27,7 +27,7 @@
 		{ "name": "wzl-ntpclient" },
 		{ "name": "wzl-arduino_json" },
 		{ "name": "wzl-gxepd2_bw" },
-		{ "name": "Adafruit GFX Library" },
+		{ "name": "wzl-adafruit-gfx" },
 		{ "name": "DS3232RTC" },
 		{
 			"name": "Rtc_Pcf8563",
