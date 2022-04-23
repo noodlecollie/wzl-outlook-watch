@@ -22,8 +22,6 @@
 	"dependencies":
 	[
 		{ "name": "wzl-adafruit_busio" },
-		{ "name": "wzl-mitigate-esp32-warnings" },
-		{ "name": "SPI" },
-		{ "name": "Wire" }
+		{ "name": "wzl-mitigate-esp32-warnings" }
 	]
 }

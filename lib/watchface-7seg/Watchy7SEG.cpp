@@ -1,4 +1,4 @@
-#include "Watchy_7_SEG.h"
+#include "Watchy7SEG.h"
 
 #define DARKMODE false
 
