@@ -25,8 +25,8 @@
 	[
 		{ "name": "wzl-wifimanager" },
 		{ "name": "wzl-ntpclient" },
+		{ "name": "wzl-arduino_json" },
 		{ "name": "Adafruit GFX Library" },
-		{ "name": "Arduino_JSON" },
 		{ "name": "DS3232RTC" },
 		{
 			"name": "Rtc_Pcf8563",
