@@ -1,6 +1,6 @@
-#include "Watchy_7_SEG.h"
+#include "WatchyOutlook.h"
 
-Watchy7SEG watchy;
+static WatchyOutlook watchy;
 
 void setup()
 {
