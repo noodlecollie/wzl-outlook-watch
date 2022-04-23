@@ -22,6 +22,7 @@
 	"dependencies":
 	[
 		{ "name": "wzl-customwatchy" },
-		{ "name": "wzl-watchyresources" }
+		{ "name": "wzl-watchyresources" },
+		{ "name": "wzl-timelib" }
 	]
 }

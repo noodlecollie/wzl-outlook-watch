@@ -12,7 +12,8 @@
 		{ "name": "wzl-ds3232rtc" },
 		{ "name": "wzl-rtc_pcf8563" },
 		{ "name": "wzl-bma" },
-		{ "name": "wzl-watchyresources" }
+		{ "name": "wzl-watchyresources" },
+		{ "name": "wzl-timelib" }
 	],
 
 	"build":

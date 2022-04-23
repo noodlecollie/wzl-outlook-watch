@@ -1,5 +1,5 @@
 {
-	"name": "Time",
+	"name": "wzl-timelib",
 	"version": "1.6.1",
 	"description": "Fork of: Time keeping library",
 	"keywords": "Time, date, hour, minute, second, day, week, month, year, RTC",
