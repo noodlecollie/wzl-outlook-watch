@@ -9,7 +9,6 @@
 			"name": "SQFMI",
 			"url": "https://github.com/sqfmi"
 		},
-
 		{
 			"name": "NoodleCollie",
 			"url": "https://github.com/noodlecollie"
@@ -25,10 +24,10 @@
 	"dependencies":
 	[
 		{ "name": "wzl-wifimanager" },
+		{ "name": "wzl-ntpclient" },
 		{ "name": "Adafruit GFX Library" },
 		{ "name": "Arduino_JSON" },
 		{ "name": "DS3232RTC" },
-		{ "name": "NTPClient" },
 		{
 			"name": "Rtc_Pcf8563",
 			"version": "https://github.com/orbitalair/Rtc_Pcf8563.git#master"
