@@ -8,7 +8,6 @@ public:
 	void drawWatchFace() override;
 
 private:
-	void drawBackground();
 	void drawTime();
-	void drawSideBar();
+	void drawMessage();
 };
