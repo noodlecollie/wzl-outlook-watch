@@ -10,4 +10,7 @@ public:
 private:
 	void drawTime();
 	void drawMessage();
+	void drawBattery();
+
+	float getBatteryVoltage() const;
 };
